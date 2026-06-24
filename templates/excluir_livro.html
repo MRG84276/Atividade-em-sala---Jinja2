@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-    <h1>Criar Livro</h1>
+    <h1>Deletar livro</h1>
 {% endblock %}
 
 {% block conteudo %}
 
-<h2>Cadastrar Novo Livro</h2>
-<form action="/biblioteca/criar" method="POST">
+<h2>Preencha para deletar o livro requisitado</h2>
+<form action="/biblioteca/excluir" method="POST">
 <div class="col-sm-8">
-    <form action="" method="POST">
+    <form method="POST" action="{{ url_for(excluir_livro', isbn=livro['isbn']) }}"></form>
         <input type="hidden" name="acao" value="cadastrar">
         <table class="table table-dark table-hover" style="max-width: 600px;">
           <tbody>
@@ -48,11 +48,10 @@
             <tr> 
               <td style="vertical-align: middle;"><label for="localizacao">Localizacao:</label></td> 
               <td><input type="text" id="localizacao" name="localizacao" class="form-control" required></td>
-
             </tr>     
          
               <td style="text-align: center;">
-                <button type="submit">Salvar Livro</button>
+                <button type="submit">Deletar Livro</button>
               </td>
         
           </tbody>
